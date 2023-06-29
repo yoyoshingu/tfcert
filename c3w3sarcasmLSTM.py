@@ -107,8 +107,9 @@ model.summary()
 NUM_EPOCHS = 10
 
 # Train the model
-history_conv = model.fit(training_padded, training_labels, epochs=NUM_EPOCHS, validation_data=(testing_padded, testing_labels))
+history = model.fit(training_padded, training_labels, epochs=NUM_EPOCHS, validation_data=(testing_padded, testing_labels))
 
+import matplotlib.pyplot as plt
 def plot_graphs(history, string):
   plt.plot(history.history[string])
   plt.plot(history.history['val_'+string])
@@ -118,5 +119,5 @@ def plot_graphs(history, string):
   plt.show()
 
 # Plot the accuracy and loss history
-plot_graphs(history_lstm, 'accuracy')
-plot_graphs(history_lstm, 'loss')
+plot_graphs(history, 'accuracy')
+plot_graphs(history, 'loss')
