@@ -95,9 +95,9 @@ model_multilstm = tf.keras.Sequential([
 ])
 
 
-# model = model_lstm
+model = model_lstm
 # model = model_conv
-model = model_multilstm
+#model = model_multilstm
 # Set the training parameters
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 
